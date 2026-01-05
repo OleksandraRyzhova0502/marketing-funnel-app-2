@@ -1,0 +1,241 @@
+.price-screen {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 40px 20px;
+  min-height: calc(100vh - 40px);
+  justify-content: flex-start;
+}
+
+.price-screen > :last-child {
+  margin-top: auto;
+  margin-bottom: 10vh;
+}
+
+.price-screen__title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ff6a00;
+  text-align: center;
+}
+
+.price-screen__subtitle {
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.price-screen__highlight {
+  color: #ff6a00;
+  font-weight: 700;
+}
+
+.price-screen__plans {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.price-screen__plan {
+  position: relative;
+  padding: 4px 20px;
+  background: rgba(255, 240, 245, 0.95);
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.price-screen__plan:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.price-screen__plan--selected {
+  border: 4px solid #ff6a00;
+  background: rgba(255, 240, 245, 1);
+  box-shadow: 0 4px 16px rgba(255, 106, 0, 0.3);
+}
+
+.price-screen__popular-badge {
+  position: absolute;
+  bottom: -12px;
+  left: -12px;
+  font-size: 34px;
+  z-index: 1;
+}
+
+.price-screen__sale-badge {
+  position: absolute;
+  top: -12px;
+  right: 0;
+  padding: 4px 12px;
+  background: #ff6a00;
+  color: #fff;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Highlight sale badge only on popular (12 Weeks) plan with stronger pink */
+.price-screen__plan--popular .price-screen__sale-badge {
+  background: #ff6a00;
+}
+
+.price-screen__plan-duration {
+  font-size: 22px;
+  font-weight: 600;
+  color: #2d1b4e;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.price-screen__plan-prices {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.price-screen__original-price {
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.price-screen__discounted-price {
+  font-size: 15px;
+  color: #2d1b4e;
+  font-weight: 500;
+}
+
+.price-screen__weekly-price {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2d1b4e;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 4px;
+  margin-top: -60px;
+}
+
+.price-screen__weekly-label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #666;
+}
+
+.price-offer-screen {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 40px 20px;
+  min-height: calc(100vh - 40px);
+  justify-content: flex-start;
+}
+
+.price-offer-screen > :last-child {
+  margin-top: auto;
+  margin-bottom: 10vh;
+}
+
+.price-offer-screen__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  align-self: flex-start;
+  margin-top: 50px;
+}
+
+.price-offer-screen__flame {
+  font-size: 86px;
+}
+
+.price-offer-screen__title {
+  font-size: 50px;
+  font-weight: 700;
+  color: #F94747;
+  line-height: 1.2;
+}
+
+.price-offer-screen__card {
+  position: relative;
+  width: 100%;
+  padding: 29px 20px;
+  background: rgba(255, 240, 245, 0.95);
+  border-radius: 12px;
+  border: 6px solid #ff6347;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.price-offer-screen__sale-badge {
+  position: absolute;
+  top: -12px;
+  right: 0;
+  padding: 4px 12px;
+  background: #F94747;
+  color: #fff;
+  border-radius: 12px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.price-offer-screen__duration {
+  font-size: 28px;
+  font-weight: 600;
+  color: #2d1b4e;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.price-offer-screen__prices {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.price-offer-screen__original-price {
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.price-offer-screen__discounted-price {
+  font-size: 15px;
+  color: #2d1b4e;
+  font-weight: 500;
+}
+
+.price-offer-screen__weekly-price {
+  font-size: 42px;
+  font-weight: 700;
+  color: #F94747;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 4px;
+  margin-top: -60px;
+}
+
+.price-offer-screen__weekly-label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #666;
+}
+

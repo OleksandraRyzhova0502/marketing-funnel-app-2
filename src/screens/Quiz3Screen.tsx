@@ -1,0 +1,74 @@
+import React, { useEffect, useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { ScreenLayout } from '../components/ScreenLayout'
+import { ProgressBar } from '../components/ProgressBar'
+import { AnswerButton } from '../components/AnswerButton'
+import { BackButton } from '../components/BackButton'
+import { track, formatAnswerText } from '../lib/analytics'
+import { useFunnelStore } from '../store/funnelStore'
+import './QuizScreen.css'
+
+export const Quiz3Screen: React.FC = () => {
+  const navigate = useNavigate()
+  const hasTrackedView = useRef(false)
+  const [selected, setSelected] = useState<string | null>(null)
+  const setAnswer = useFunnelStore((state) => state.setAnswer)
+  const answers = useFunnelStore((state) => state.answers)
+
+  useEffect(() => {
+    if (!hasTrackedView.current) {
+      track('view_question_3')
+      hasTrackedView.current = true
+    }
+    
+    // Load saved answer if exists (only on mount)
+    const savedAnswer = answers['question_3']
+    if (savedAnswer) {
+      // Convert formatted answer back to original (replace underscores with spaces)
+      const originalAnswer = savedAnswer.replace(/_/g, ' ')
+      setSelected(originalAnswer)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  const handleAnswer = (answer: string) => {
+    setSelected(answer)
+    const formatted = formatAnswerText(answer)
+    setAnswer('question_3', formatted)
+    track('answear_question_3', { answer: formatted })
+    setTimeout(() => navigate('/quiz4'), 300)
+  }
+
+  return (
+    <ScreenLayout>
+      <div className="quiz-screen">
+        <ProgressBar progress={3 / 7} />
+        <h2 className="quiz-screen__question">
+          What is your and your partner <span className="quiz-screen__highlight">libido level</span>?
+        </h2>
+        <div className="quiz-screen__answers">
+          <AnswerButton
+            selected={selected === 'My libido is higher'}
+            onClick={() => handleAnswer('My libido is higher')}
+          >
+            My libido is higher
+          </AnswerButton>
+          <AnswerButton
+            selected={selected === 'My partner libido is higher'}
+            onClick={() => handleAnswer('My partner libido is higher')}
+          >
+            My partner libido is higher
+          </AnswerButton>
+          <AnswerButton
+            selected={selected === 'The same level'}
+            onClick={() => handleAnswer('The same level')}
+          >
+            The same level
+          </AnswerButton>
+        </div>
+        <BackButton to="/quiz2" />
+      </div>
+    </ScreenLayout>
+  )
+}
+

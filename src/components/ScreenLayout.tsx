@@ -1,0 +1,33 @@
+import React from 'react'
+import './ScreenLayout.css'
+
+interface ScreenLayoutProps {
+  children: React.ReactNode
+  showCloseButton?: boolean
+  onClose?: () => void
+}
+
+export const ScreenLayout: React.FC<ScreenLayoutProps> = ({
+  children,
+  showCloseButton = false,
+  onClose,
+}) => {
+  return (
+    <div className="screen-layout">
+      <div className="screen-layout__background" />
+      <div className="screen-layout__container">
+        {showCloseButton && onClose && (
+          <button
+            className="screen-layout__close-button"
+            onClick={onClose}
+            aria-label="Close"
+          >
+            ×
+          </button>
+        )}
+        {children}
+      </div>
+    </div>
+  )
+}
+
