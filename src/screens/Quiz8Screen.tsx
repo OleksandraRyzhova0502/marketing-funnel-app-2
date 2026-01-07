@@ -41,29 +41,48 @@ export const Quiz8Screen: React.FC = () => {
 
   return (
     <ScreenLayout>
-      <div className="quiz-screen">
+      <div className="quiz-screen quiz-screen--quiz7">
         <ProgressBar progress={8 / 8} />
         <h2 className="quiz-screen__question">
-          What is your <span className="quiz-screen__highlight">main goal?</span>
+          How comfortable are you with <span className="quiz-screen__highlight">oral sex?</span>
         </h2>
-        <div className="quiz-screen__answers">
+        <div className="quiz-screen__slider-labels">
+          <span>I don't<br />like it</span>
+          <span> <br />enjoying it</span>
+        </div>
+        <div className="quiz-screen__slider-line">
+          <div className="quiz-screen__slider-line-track"></div>
+          <div className="quiz-screen__slider-line-marker quiz-screen__slider-line-marker--left"></div>
+          <div className="quiz-screen__slider-line-marker quiz-screen__slider-line-marker--right"></div>
+        </div>
+        <div className="quiz-screen__number-answers quiz-screen__number-answers--quiz7">
           <AnswerButton
-            selected={selected === 'Improve skills'}
-            onClick={() => handleAnswer('Improve skills')}
+            variant="number"
+            selected={selected === '1'}
+            onClick={() => handleAnswer('1')}
           >
-            Improve skills
+            1
           </AnswerButton>
           <AnswerButton
-            selected={selected === 'Boost confidence'}
-            onClick={() => handleAnswer('Boost confidence')}
+            variant="number"
+            selected={selected === '2'}
+            onClick={() => handleAnswer('2')}
           >
-            Boost confidence
+            2
           </AnswerButton>
           <AnswerButton
-            selected={selected === 'Expand knowledge'}
-            onClick={() => handleAnswer('Expand knowledge')}
+            variant="number"
+            selected={selected === '3'}
+            onClick={() => handleAnswer('3')}
           >
-            Expand knowledge
+            3
+          </AnswerButton>
+          <AnswerButton
+            variant="number"
+            selected={selected === '4'}
+            onClick={() => handleAnswer('4')}
+          >
+            4
           </AnswerButton>
         </div>
         <BackButton to="/quiz7" />

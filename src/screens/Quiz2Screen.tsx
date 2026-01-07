@@ -42,7 +42,7 @@ export const Quiz2Screen: React.FC = () => {
   return (
     <ScreenLayout>
       <div className="quiz-screen">
-        <ProgressBar progress={2 / 7} />
+        <ProgressBar progress={2 / 8} />
         <h2 className="quiz-screen__question">
           How do you rate<br />
           your <span className="quiz-screen__highlight">skill level</span> in this?
