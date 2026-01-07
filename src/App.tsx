@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { initAnalytics } from './lib/analytics'
 import { useUTMStore } from './store/utmStore'
-import { StartScreen } from './screens/StartScreen'
 import { Quiz1Screen } from './screens/Quiz1Screen'
 import { Quiz2Screen } from './screens/Quiz2Screen'
 import { Quiz3Screen } from './screens/Quiz3Screen'
@@ -34,8 +33,7 @@ function App() {
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="/start" replace />} />
-        <Route path="/start" element={<StartScreen />} />
+        <Route path="/" element={<Navigate to="/quiz1" replace />} />
         <Route path="/quiz1" element={<Quiz1Screen />} />
         <Route path="/quiz2" element={<Quiz2Screen />} />
         <Route path="/quiz3" element={<Quiz3Screen />} />

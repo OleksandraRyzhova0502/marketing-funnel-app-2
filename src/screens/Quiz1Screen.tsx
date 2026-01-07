@@ -43,27 +43,20 @@ export const Quiz1Screen: React.FC = () => {
       <div className="quiz-screen">
         <ProgressBar progress={1 / 7} />
         <h2 className="quiz-screen__question">
-          Do you or your partner<br />
-          usually take <span className="quiz-screen__highlight">more initiative</span> in sex?
+          Which <span className="quiz-screen__highlight">skills</span> would you like to improve?
         </h2>
         <div className="quiz-screen__answers">
           <AnswerButton
-            selected={selected === 'My partner'}
-            onClick={() => handleAnswer('My partner')}
+            selected={selected === 'Sexual skills'}
+            onClick={() => handleAnswer('Sexual skills')}
           >
-            My partner
+            Sexual skills
           </AnswerButton>
           <AnswerButton
-            selected={selected === 'Me'}
-            onClick={() => handleAnswer('Me')}
+            selected={selected === 'Dating and communication with women'}
+            onClick={() => handleAnswer('Dating and communication with women')}
           >
-            Me
-          </AnswerButton>
-          <AnswerButton
-            selected={selected === 'It varies'}
-            onClick={() => handleAnswer('It varies')}
-          >
-            It varies
+            Dating and communication with women
           </AnswerButton>
         </div>
       </div>
