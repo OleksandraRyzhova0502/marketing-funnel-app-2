@@ -54,16 +54,16 @@ export const Quiz8Screen: React.FC = () => {
             Don't know what to do
           </AnswerButton>
           <AnswerButton
-            selected={selected === "Experience pain"}
-            onClick={() => handleAnswer("Experience pain")}
+            selected={selected === "Feel shy"}
+            onClick={() => handleAnswer("Feel shy")}
           >
-            Experience pain
+            Feel shy
           </AnswerButton>
           <AnswerButton
-            selected={selected === "Feel shy / afraid to make a mistake"}
-            onClick={() => handleAnswer("Feel shy / afraid to make a mistake")}
+            selected={selected === "Afraid to make a mistake"}
+            onClick={() => handleAnswer("Afraid to make a mistake")}
           >
-            Feel shy / afraid to make a mistake
+            Afraid to make a mistake
           </AnswerButton>
           <AnswerButton
             selected={selected === "None of these"}

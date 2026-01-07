@@ -44,7 +44,7 @@ export const Quiz7Screen: React.FC = () => {
       <div className="quiz-screen quiz-screen--quiz7">
         <ProgressBar progress={7 / 8} />
         <h2 className="quiz-screen__question">
-          How do <span className="quiz-screen__highlight">you</span> and <span className="quiz-screen__highlight">your partner</span> feel about <span className="quiz-screen__highlight--pink">experiments</span>?
+          How do <span className="quiz-screen__highlight">you</span> feel about <span className="quiz-screen__highlight--pink">experiments</span>?
         </h2>
         <div className="quiz-screen__slider-labels">
           <span>don't like</span>
