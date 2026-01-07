@@ -1,0 +1,48 @@
+.skillsfact-screen {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 60px 20px;
+  min-height: calc(100vh - 40px);
+  justify-content: center;
+  position: relative;
+}
+
+.skillsfact-screen__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.skillsfact-screen__number {
+  font-size: 55px;
+  font-weight: 700;
+  color: #ff7320;
+  text-align: left;
+  line-height: 1;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.skillsfact-screen__text {
+  font-size: 13px;
+  font-weight: 400;
+  color: #fff;
+  text-align: left;
+  line-height: 1.4;
+  margin: 0;
+  flex: 1;
+}
+
+.skillsfact-screen .primary-button {
+  position: absolute;
+  bottom: 14vh;
+  left: 20px;
+  width: auto;
+  max-width: none;
+}

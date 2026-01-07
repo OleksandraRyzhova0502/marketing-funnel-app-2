@@ -35,7 +35,11 @@ export const Quiz1Screen: React.FC = () => {
     const formatted = formatAnswerText(answer)
     setAnswer('question_1', formatted)
     track('answear_question_1', { answer: formatted })
-    setTimeout(() => navigate('/quiz2'), 300)
+    if (answer === 'Sexual skills') {
+      setTimeout(() => navigate('/skillsfact'), 300)
+    } else if (answer === 'Dating and communication with women') {
+      setTimeout(() => navigate('/talkfact'), 300)
+    }
   }
 
   return (

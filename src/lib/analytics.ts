@@ -110,13 +110,8 @@ function loadAmplitudeSDK(apiKey: string): Promise<void> {
  * Initialize Amplitude SDK and set UTM parameters as user properties
  */
 export async function initAnalytics() {
-  // Get Amplitude API key from environment variable
-  const apiKey = import.meta.env.VITE_AMPLITUDE_API_KEY
-
-  if (!apiKey) {
-    console.warn('VITE_AMPLITUDE_API_KEY is not set. Amplitude analytics will not be initialized.')
-    return
-  }
+  // Amplitude API key
+  const apiKey = 'f57aa48fea8d627717447a9290d46c15'
 
   try {
     // Load Amplitude SDK

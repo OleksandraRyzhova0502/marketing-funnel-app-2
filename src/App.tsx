@@ -4,6 +4,8 @@ import { initAnalytics } from './lib/analytics'
 import { useUTMStore } from './store/utmStore'
 import { Quiz1Screen } from './screens/Quiz1Screen'
 import { Quiz2Screen } from './screens/Quiz2Screen'
+import { SkillsFactScreen } from './screens/SkillsFactScreen'
+import { TalkFactScreen } from './screens/TalkFactScreen'
 import { Quiz3Screen } from './screens/Quiz3Screen'
 import { Quiz4Screen } from './screens/Quiz4Screen'
 import { Quiz5Screen } from './screens/Quiz5Screen'
@@ -35,6 +37,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/quiz1" replace />} />
         <Route path="/quiz1" element={<Quiz1Screen />} />
+        <Route path="/skillsfact" element={<SkillsFactScreen />} />
+        <Route path="/talkfact" element={<TalkFactScreen />} />
         <Route path="/quiz2" element={<Quiz2Screen />} />
         <Route path="/quiz3" element={<Quiz3Screen />} />
         <Route path="/quiz4" element={<Quiz4Screen />} />
