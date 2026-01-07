@@ -104,10 +104,25 @@
   margin-top: 5px;
 }
 
-/* Quiz7 specific: make question text white */
-.quiz-screen--quiz7 .quiz-screen__question,
-.quiz-screen--quiz7 .quiz-screen__question .quiz-screen__highlight {
+/* Quiz6 specific: make question text white */
+.quiz-screen--quiz6 .quiz-screen__question,
+.quiz-screen--quiz6 .quiz-screen__question .quiz-screen__highlight {
   color: #fff;
+}
+
+/* Quiz6 specific: make "experiments?" orange */
+.quiz-screen--quiz6 .quiz-screen__question .quiz-screen__highlight--pink {
+  color: #ff6a00;
+}
+
+/* Quiz7 specific: make question text white */
+.quiz-screen--quiz7 .quiz-screen__question {
+  color: #fff;
+}
+
+/* Quiz7 specific: make highlight orange */
+.quiz-screen--quiz7 .quiz-screen__question .quiz-screen__highlight {
+  color: #ff6a00;
 }
 
 /* Quiz7 specific: make "experiments" pink */

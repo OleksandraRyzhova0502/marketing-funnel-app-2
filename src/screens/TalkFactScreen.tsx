@@ -26,7 +26,7 @@ export const TalkFactScreen: React.FC = () => {
         <div className="talkfact-screen__content">
           <h2 className="talkfact-screen__number">46%</h2>
           <p className="talkfact-screen__text">
-            of men admitted to feeling uncomfortable when talking to the opposite sex in a 2025 survey
+            of men admitted to <strong>feeling uncomfortable</strong> when talking to the opposite sex in a 2025 survey
           </p>
         </div>
         <PrimaryButton onClick={handleNext}>NEXT &gt;&gt;</PrimaryButton>

@@ -44,27 +44,26 @@ export const Quiz4Screen: React.FC = () => {
       <div className="quiz-screen">
         <ProgressBar progress={4 / 7} />
         <h2 className="quiz-screen__question">
-          Would you like to<br />
-          take more initiative?
+          Do you currently have<br /><span className="quiz-screen__highlight">a partner?</span>
         </h2>
         <div className="quiz-screen__answers">
           <AnswerButton
-            selected={selected === 'Yes, I want'}
-            onClick={() => handleAnswer('Yes, I want')}
+            selected={selected === 'No partner'}
+            onClick={() => handleAnswer('No partner')}
           >
-            Yes, I want
+            No partner
           </AnswerButton>
           <AnswerButton
-            selected={selected === "I'm open to trying"}
-            onClick={() => handleAnswer("I'm open to trying")}
+            selected={selected === 'In a relationship'}
+            onClick={() => handleAnswer('In a relationship')}
           >
-            I'm open to trying
+            In a relationship
           </AnswerButton>
           <AnswerButton
-            selected={selected === "No, it's not mine"}
-            onClick={() => handleAnswer("No, it's not mine")}
+            selected={selected === 'Have multiple partners'}
+            onClick={() => handleAnswer('Have multiple partners')}
           >
-            No, it's not mine
+            Have multiple partners
           </AnswerButton>
         </div>
         <BackButton to="/quiz3" />

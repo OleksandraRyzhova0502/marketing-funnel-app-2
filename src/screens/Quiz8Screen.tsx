@@ -44,32 +44,26 @@ export const Quiz8Screen: React.FC = () => {
       <div className="quiz-screen">
         <ProgressBar progress={8 / 8} />
         <h2 className="quiz-screen__question">
-          Which <span className="quiz-screen__highlight">problems</span> occur most often?
+          What is your <span className="quiz-screen__highlight">main goal?</span>
         </h2>
         <div className="quiz-screen__answers">
           <AnswerButton
-            selected={selected === "Don't know what to do"}
-            onClick={() => handleAnswer("Don't know what to do")}
+            selected={selected === 'Improve skills'}
+            onClick={() => handleAnswer('Improve skills')}
           >
-            Don't know what to do
+            Improve skills
           </AnswerButton>
           <AnswerButton
-            selected={selected === "Feel shy"}
-            onClick={() => handleAnswer("Feel shy")}
+            selected={selected === 'Boost confidence'}
+            onClick={() => handleAnswer('Boost confidence')}
           >
-            Feel shy
+            Boost confidence
           </AnswerButton>
           <AnswerButton
-            selected={selected === "Afraid to make a mistake"}
-            onClick={() => handleAnswer("Afraid to make a mistake")}
+            selected={selected === 'Expand knowledge'}
+            onClick={() => handleAnswer('Expand knowledge')}
           >
-            Afraid to make a mistake
-          </AnswerButton>
-          <AnswerButton
-            selected={selected === "None of these"}
-            onClick={() => handleAnswer("None of these")}
-          >
-            None of these
+            Expand knowledge
           </AnswerButton>
         </div>
         <BackButton to="/quiz7" />

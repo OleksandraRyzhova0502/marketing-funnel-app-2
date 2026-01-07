@@ -44,11 +44,11 @@ export const Quiz7Screen: React.FC = () => {
       <div className="quiz-screen quiz-screen--quiz7">
         <ProgressBar progress={7 / 8} />
         <h2 className="quiz-screen__question">
-          How do <span className="quiz-screen__highlight">you</span> feel about <span className="quiz-screen__highlight--pink">experiments</span>?
+          How comfortable are you with <span className="quiz-screen__highlight">oral sex?</span>
         </h2>
         <div className="quiz-screen__slider-labels">
-          <span>don't like</span>
-          <span>is always ready to</span>
+          <span>I don't<br />like it</span>
+          <span> <br />enjoying it</span>
         </div>
         <div className="quiz-screen__slider-line">
           <div className="quiz-screen__slider-line-track"></div>
