@@ -68,7 +68,7 @@ export const MailScreen: React.FC = () => {
     <ScreenLayout>
       <div className="mail-screen">
         <h2 className="mail-screen__title">
-          <span className="mail-screen__highlight" style={{ fontSize: '45px' }}>Your plan is ready!</span>
+          <span className="mail-screen__highlight" style={{ fontSize: '45px' }}>Your personal plan is ready!</span>
           <br />
           <span style={{ fontSize: '20px', fontWeight: '400' }}>Enter email to receive the course</span>
         </h2>
