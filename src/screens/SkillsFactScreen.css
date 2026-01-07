@@ -11,6 +11,10 @@
   position: relative;
 }
 
+.skillsfact-screen__content:first-of-type {
+  margin-top: -200px;
+}
+
 .skillsfact-screen__content {
   display: flex;
   flex-direction: row;

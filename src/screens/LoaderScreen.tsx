@@ -23,11 +23,11 @@ export const LoaderScreen: React.FC = () => {
     const updateProgress = () => {
       if (startTimeRef.current) {
         const elapsed = Date.now() - startTimeRef.current
-        const newProgress = Math.min(100, (elapsed / 3000) * 100)
+        const newProgress = Math.min(100, (elapsed / 5000) * 100)
         setProgress(newProgress)
         
         // Calculate time spent percentage (multiples of 5 only)
-        const timeSpentPercent = Math.round((elapsed / 3000) * 100 / 5) * 5
+        const timeSpentPercent = Math.round((elapsed / 5000) * 100 / 5) * 5
         setTimeSpent(Math.min(100, timeSpentPercent))
 
         if (newProgress < 100) {
