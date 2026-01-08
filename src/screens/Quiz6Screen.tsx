@@ -99,7 +99,7 @@ export const Quiz6Screen: React.FC = () => {
               onClick={() => handleAnswer('Option 4')}
             >
               <img 
-                src="/quiz9-option2.jpg" 
+                src="/quiz9-option2.jpeg" 
                 alt="Partner option 4"
                 className="quiz-screen__image"
                 onError={(e) => {

@@ -2,12 +2,13 @@ import React, { useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ScreenLayout } from '../components/ScreenLayout'
 import { PrimaryButton } from '../components/PrimaryButton'
-import { track } from '../lib/analytics'
+import { track, trackFacebookPixelPurchase } from '../lib/analytics'
 import './PriceScreen.css'
 
 export const PriceOfferScreen: React.FC = () => {
   const navigate = useNavigate()
   const hasTrackedView = useRef(false)
+  const buyButtonRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     if (!hasTrackedView.current) {
@@ -16,14 +17,39 @@ export const PriceOfferScreen: React.FC = () => {
     }
   }, [])
 
+  useEffect(() => {
+    const buyButton = buyButtonRef.current
+    if (!buyButton) return
+
+    const handleBuyClick = (e: MouseEvent) => {
+      // Prevent default behavior
+      e.preventDefault()
+      
+      // Fixed price for the offer
+      const purchaseValue = 18.99
+      
+      // Track Amplitude event
+      track('clicked_pay_offer', { currency: 'USD', value: purchaseValue })
+      
+      // Track Meta Pixel Purchase event
+      trackFacebookPixelPurchase(purchaseValue, 'USD')
+      
+      // Add delay before redirect to ensure event is sent successfully
+      setTimeout(() => {
+        navigate('/thanks')
+      }, 400)
+    }
+
+    buyButton.addEventListener('click', handleBuyClick)
+
+    return () => {
+      buyButton.removeEventListener('click', handleBuyClick)
+    }
+  }, [navigate])
+
   const handleClose = () => {
     track('clicked_cancel_offer')
     navigate('/error')
-  }
-
-  const handlePay = () => {
-    track('clicked_pay_offer', { currency: 'USD' })
-    navigate('/thanks')
   }
 
   return (
@@ -45,7 +71,7 @@ export const PriceOfferScreen: React.FC = () => {
             <span className="price-offer-screen__weekly-label">per week</span>
           </div>
         </div>
-        <PrimaryButton onClick={handlePay}>Get my plan</PrimaryButton>
+        <PrimaryButton ref={buyButtonRef}>Get my plan</PrimaryButton>
       </div>
     </ScreenLayout>
   )

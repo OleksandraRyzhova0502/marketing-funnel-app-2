@@ -234,9 +234,30 @@ export function trackFacebookPixel(eventName: string, eventData?: Record<string,
     // If Facebook Pixel isn't loaded yet, queue the event
     setTimeout(() => trackFacebookPixel(eventName, eventData), 100)
     return
-  }  try {
+  }
+  try {
     window.fbq('track', eventName, eventData || {})
   } catch (error) {
     console.error('Failed to track Facebook Pixel event:', error)
   }
+}
+
+/**
+ * Track Facebook Pixel Purchase event
+ * 
+ * @param value - Purchase value (number)
+ * @param currency - Currency code (string, e.g., "USD")
+ * @param additionalData - Optional additional event data
+ */
+export function trackFacebookPixelPurchase(
+  value: number,
+  currency: string = 'USD',
+  additionalData?: Record<string, any>
+) {
+  const purchaseData: Record<string, any> = {
+    value,
+    currency,
+    ...additionalData,
+  }
+  trackFacebookPixel('Purchase', purchaseData)
 }

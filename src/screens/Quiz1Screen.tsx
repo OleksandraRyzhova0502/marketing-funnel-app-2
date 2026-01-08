@@ -43,26 +43,27 @@ export const Quiz1Screen: React.FC = () => {
       <div className="quiz-screen quiz-screen--quiz1">
         <ProgressBar progress={1 / 10} />
         <h2 className="quiz-screen__question">
-          What is your <span className="quiz-screen__highlight">main goal?</span>
+          How do you rate your<br />
+          current <span className="quiz-screen__highlight">sex skills</span> level?
         </h2>
         <div className="quiz-screen__answers">
           <AnswerButton
-            selected={selected === '☄️ Improve skills'}
-            onClick={() => handleAnswer('☄️ Improve skills')}
+            selected={selected === '🥦 Newbie'}
+            onClick={() => handleAnswer('🥦 Newbie')}
           >
-            ☄️ Improve skills
+            🥦 Newbie
           </AnswerButton>
           <AnswerButton
-            selected={selected === '💪🏻 Boost confidence'}
-            onClick={() => handleAnswer('💪🏻 Boost confidence')}
+            selected={selected === '🍌 Tried something before'}
+            onClick={() => handleAnswer('🍌 Tried something before')}
           >
-            💪🏻 Boost confidence
+            🍌 Tried something before
           </AnswerButton>
           <AnswerButton
-            selected={selected === '🌋 Expand knowledge'}
-            onClick={() => handleAnswer('🌋 Expand knowledge')}
+            selected={selected === '🍆 Had some prior experience'}
+            onClick={() => handleAnswer('🍆 Had some prior experience')}
           >
-            🌋 Expand knowledge
+            🍆 Had some prior experience
           </AnswerButton>
         </div>
       </div>
