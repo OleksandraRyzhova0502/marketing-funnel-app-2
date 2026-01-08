@@ -41,35 +41,35 @@ export const Quiz5Screen: React.FC = () => {
 
   return (
     <ScreenLayout>
-      <div className="quiz-screen quiz-screen--quiz3">
+      <div className="quiz-screen quiz-screen--quiz5">
         <ProgressBar progress={5 / 10} />
         <h2 className="quiz-screen__question">
-          Which of these would you like <span className="quiz-screen__highlight">to learn about</span> the most?
+          Which <span className="quiz-screen__highlight">problems</span> occur most often?
         </h2>
         <div className="quiz-screen__answers">
           <AnswerButton
-            selected={selected === "🐈‍⬛ Sex positions"}
-            onClick={() => handleAnswer("🐈‍⬛ Sex positions")}
+            selected={selected === "⁉️ Don't know what to do"}
+            onClick={() => handleAnswer("⁉️ Don't know what to do")}
           >
-            🐈‍⬛ Sex positions
+            ⁉️ Don't know what to do
           </AnswerButton>
           <AnswerButton
-            selected={selected === "🖐 Intimate massage"}
-            onClick={() => handleAnswer("🖐 Intimate massage")}
+            selected={selected === "👀 Feel shy"}
+            onClick={() => handleAnswer("👀 Feel shy")}
           >
-            🖐 Intimate massage
+            👀 Feel shy
           </AnswerButton>
           <AnswerButton
-            selected={selected === "🫦 Oral sex"}
-            onClick={() => handleAnswer("🫦 Oral sex")}
+            selected={selected === "🧠 Afraid to make a mistake"}
+            onClick={() => handleAnswer("🧠 Afraid to make a mistake")}
           >
-            🫦 Oral sex
+            🧠 Afraid to make a mistake
           </AnswerButton>
           <AnswerButton
-            selected={selected === "🔞 All of this"}
-            onClick={() => handleAnswer("🔞 All of this")}
+            selected={selected === "🚫 None of these"}
+            onClick={() => handleAnswer("🚫 None of these")}
           >
-            🔞 All of this
+            🚫 None of these
           </AnswerButton>
         </div>
         <BackButton to="/quiz4" />
