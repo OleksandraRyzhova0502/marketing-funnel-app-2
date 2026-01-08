@@ -39,11 +39,21 @@
   color: #fff;
   font-size: 18px;
   line-height: 1.5;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  width: fit-content;
+  max-width: calc(100% - 40px);
+  align-items: flex-start;
 }
 
 .plan-screen__list li {
   padding-left: 24px;
   position: relative;
+  text-align: left;
+  width: 100%;
+  align-self: flex-start;
 }
 
 .plan-screen__list li::before {
