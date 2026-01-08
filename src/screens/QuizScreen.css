@@ -198,6 +198,11 @@
   display: block;
 }
 
+/* Quiz6 specific: make image answers height smaller */
+.quiz-screen--quiz6 .quiz-screen__image-answer {
+  aspect-ratio: 3/3.9;
+}
+
 /* Quiz5, Quiz6, Quiz7: change text and lines from #191818 to #9f4f16 */
 .quiz-screen--quiz5 .quiz-screen__slider-labels,
 .quiz-screen--quiz6 .quiz-screen__slider-labels,

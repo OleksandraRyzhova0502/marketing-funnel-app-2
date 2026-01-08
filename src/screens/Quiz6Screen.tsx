@@ -40,10 +40,10 @@ export const Quiz6Screen: React.FC = () => {
 
   return (
     <ScreenLayout>
-      <div className="quiz-screen">
+      <div className="quiz-screen quiz-screen--quiz6">
         <ProgressBar progress={6 / 10} />
         <h2 className="quiz-screen__question">
-          What <span className="quiz-screen__highlight--orange">body size ratio</span> with a partner do you like?
+          What <span className="quiz-screen__highlight--orange">body type</span> do you like best?
         </h2>
         <div className="quiz-screen__image-answers quiz-screen__image-answers--quiz9">
           <div className="quiz-screen__image-row">
@@ -52,7 +52,7 @@ export const Quiz6Screen: React.FC = () => {
               onClick={() => handleAnswer('Option 1')}
             >
               <img 
-                src="/quiz9-option1.jpeg" 
+                src="/quiz9-option1.jpg" 
                 alt="Partner option 1"
                 className="quiz-screen__image"
                 onError={(e) => {
@@ -67,7 +67,7 @@ export const Quiz6Screen: React.FC = () => {
               onClick={() => handleAnswer('Option 2')}
             >
               <img 
-                src="/quiz9-option2.jpg" 
+                src="/quiz9-option4.jpg" 
                 alt="Partner option 2"
                 className="quiz-screen__image"
                 onError={(e) => {
@@ -84,7 +84,7 @@ export const Quiz6Screen: React.FC = () => {
               onClick={() => handleAnswer('Option 3')}
             >
               <img 
-                src="/quiz9-option3.jpeg" 
+                src="/quiz9-option3.jpg" 
                 alt="Partner option 3"
                 className="quiz-screen__image"
                 onError={(e) => {
@@ -99,7 +99,7 @@ export const Quiz6Screen: React.FC = () => {
               onClick={() => handleAnswer('Option 4')}
             >
               <img 
-                src="/quiz9-option4.jpg" 
+                src="/quiz9-option2.jpg" 
                 alt="Partner option 4"
                 className="quiz-screen__image"
                 onError={(e) => {
