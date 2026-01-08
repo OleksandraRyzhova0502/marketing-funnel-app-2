@@ -48,22 +48,22 @@ export const Quiz4Screen: React.FC = () => {
         </h2>
         <div className="quiz-screen__answers">
           <AnswerButton
-            selected={selected === 'No partner'}
-            onClick={() => handleAnswer('No partner')}
+            selected={selected === '🥃 No partner'}
+            onClick={() => handleAnswer('🥃 No partner')}
           >
-            No partner
+            🥃 No partner
           </AnswerButton>
           <AnswerButton
-            selected={selected === 'In a relationship'}
-            onClick={() => handleAnswer('In a relationship')}
+            selected={selected === '💃 In a relationship'}
+            onClick={() => handleAnswer('💃 In a relationship')}
           >
-            In a relationship
+            💃 In a relationship
           </AnswerButton>
           <AnswerButton
-            selected={selected === 'Have multiple partners'}
-            onClick={() => handleAnswer('Have multiple partners')}
+            selected={selected === '👯‍♀️ Have multiple partners'}
+            onClick={() => handleAnswer('👯‍♀️ Have multiple partners')}
           >
-            Have multiple partners
+            👯‍♀️ Have multiple partners
           </AnswerButton>
         </div>
         <BackButton to="/quiz3" />
