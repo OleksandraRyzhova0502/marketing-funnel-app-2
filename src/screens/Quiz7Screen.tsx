@@ -41,21 +41,21 @@ export const Quiz7Screen: React.FC = () => {
 
   return (
     <ScreenLayout>
-      <div className="quiz-screen quiz-screen--quiz6">
+      <div className="quiz-screen quiz-screen--quiz5">
         <ProgressBar progress={7 / 10} />
         <h2 className="quiz-screen__question">
-          🔞 How do <span className="quiz-screen__highlight">you</span> feel about <span className="quiz-screen__highlight--pink">BDSM?</span>
+          🔥 What is your <span className="quiz-screen__highlight">libido level?</span>
         </h2>
         <div className="quiz-screen__slider-labels">
-          <span>don't like</span>
-          <span>is always ready to</span>
+          <span>low</span>
+          <span>high</span>
         </div>
-        <div className="quiz-screen__slider-line">
+        <div className="quiz-screen__slider-line quiz-screen__slider-line--quiz5">
           <div className="quiz-screen__slider-line-track"></div>
           <div className="quiz-screen__slider-line-marker quiz-screen__slider-line-marker--left"></div>
           <div className="quiz-screen__slider-line-marker quiz-screen__slider-line-marker--right"></div>
         </div>
-        <div className="quiz-screen__number-answers quiz-screen__number-answers--quiz6">
+        <div className="quiz-screen__number-answers">
           <AnswerButton
             variant="number"
             selected={selected === '1'}

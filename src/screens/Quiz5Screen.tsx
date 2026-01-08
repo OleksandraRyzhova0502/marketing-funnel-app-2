@@ -41,48 +41,35 @@ export const Quiz5Screen: React.FC = () => {
 
   return (
     <ScreenLayout>
-      <div className="quiz-screen quiz-screen--quiz5">
+      <div className="quiz-screen quiz-screen--quiz3">
         <ProgressBar progress={5 / 10} />
         <h2 className="quiz-screen__question">
-          🔥 What is your <span className="quiz-screen__highlight">libido level?</span>
+          Which of these would you like <span className="quiz-screen__highlight">to learn about</span> the most?
         </h2>
-        <div className="quiz-screen__slider-labels">
-          <span>low</span>
-          <span>high</span>
-        </div>
-        <div className="quiz-screen__slider-line quiz-screen__slider-line--quiz5">
-          <div className="quiz-screen__slider-line-track"></div>
-          <div className="quiz-screen__slider-line-marker quiz-screen__slider-line-marker--left"></div>
-          <div className="quiz-screen__slider-line-marker quiz-screen__slider-line-marker--right"></div>
-        </div>
-        <div className="quiz-screen__number-answers">
+        <div className="quiz-screen__answers">
           <AnswerButton
-            variant="number"
-            selected={selected === '1'}
-            onClick={() => handleAnswer('1')}
+            selected={selected === "🐈‍⬛ Sex positions"}
+            onClick={() => handleAnswer("🐈‍⬛ Sex positions")}
           >
-            1
+            🐈‍⬛ Sex positions
           </AnswerButton>
           <AnswerButton
-            variant="number"
-            selected={selected === '2'}
-            onClick={() => handleAnswer('2')}
+            selected={selected === "🖐 Intimate massage"}
+            onClick={() => handleAnswer("🖐 Intimate massage")}
           >
-            2
+            🖐 Intimate massage
           </AnswerButton>
           <AnswerButton
-            variant="number"
-            selected={selected === '3'}
-            onClick={() => handleAnswer('3')}
+            selected={selected === "🫦 Oral sex"}
+            onClick={() => handleAnswer("🫦 Oral sex")}
           >
-            3
+            🫦 Oral sex
           </AnswerButton>
           <AnswerButton
-            variant="number"
-            selected={selected === '4'}
-            onClick={() => handleAnswer('4')}
+            selected={selected === "🔞 All of this"}
+            onClick={() => handleAnswer("🔞 All of this")}
           >
-            4
+            🔞 All of this
           </AnswerButton>
         </div>
         <BackButton to="/quiz4" />
