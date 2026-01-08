@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ScreenLayout } from '../components/ScreenLayout'
 import { ProgressBar } from '../components/ProgressBar'
+import { AnswerButton } from '../components/AnswerButton'
 import { BackButton } from '../components/BackButton'
 import { track, formatAnswerText } from '../lib/analytics'
 import { useFunnelStore } from '../store/funnelStore'
@@ -40,76 +41,49 @@ export const Quiz6Screen: React.FC = () => {
 
   return (
     <ScreenLayout>
-      <div className="quiz-screen quiz-screen--quiz6">
-        <ProgressBar progress={6 / 10} />
+      <div className="quiz-screen quiz-screen--quiz5">
+        <ProgressBar progress={6 / 9} />
         <h2 className="quiz-screen__question">
-          What <span className="quiz-screen__highlight--orange">body type</span> do you like best?
+          🔥 What is your <span className="quiz-screen__highlight">libido level?</span>
         </h2>
-        <div className="quiz-screen__image-answers quiz-screen__image-answers--quiz9">
-          <div className="quiz-screen__image-row">
-            <button
-              className={`quiz-screen__image-answer ${selected === 'Option 1' ? 'quiz-screen__image-answer--selected' : ''}`}
-              onClick={() => handleAnswer('Option 1')}
-            >
-              <img 
-                src="/quiz9-option1.jpeg" 
-                alt="Partner option 1"
-                className="quiz-screen__image"
-                onError={(e) => {
-                  // Fallback if image doesn't exist
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                }}
-              />
-            </button>
-            <button
-              className={`quiz-screen__image-answer ${selected === 'Option 2' ? 'quiz-screen__image-answer--selected' : ''}`}
-              onClick={() => handleAnswer('Option 2')}
-            >
-              <img 
-                src="/quiz9-option2.jpg" 
-                alt="Partner option 2"
-                className="quiz-screen__image"
-                onError={(e) => {
-                  // Fallback if image doesn't exist
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                }}
-              />
-            </button>
-          </div>
-          <div className="quiz-screen__image-row">
-            <button
-              className={`quiz-screen__image-answer ${selected === 'Option 3' ? 'quiz-screen__image-answer--selected' : ''}`}
-              onClick={() => handleAnswer('Option 3')}
-            >
-              <img 
-                src="/quiz9-option3.jpg" 
-                alt="Partner option 3"
-                className="quiz-screen__image"
-                onError={(e) => {
-                  // Fallback if image doesn't exist
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                }}
-              />
-            </button>
-            <button
-              className={`quiz-screen__image-answer ${selected === 'Option 4' ? 'quiz-screen__image-answer--selected' : ''}`}
-              onClick={() => handleAnswer('Option 4')}
-            >
-              <img 
-                src="/quiz9-option4.jpg" 
-                alt="Partner option 4"
-                className="quiz-screen__image"
-                onError={(e) => {
-                  // Fallback if image doesn't exist
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                }}
-              />
-            </button>
-          </div>
+        <div className="quiz-screen__slider-labels">
+          <span>low</span>
+          <span>high</span>
+        </div>
+        <div className="quiz-screen__slider-line quiz-screen__slider-line--quiz5">
+          <div className="quiz-screen__slider-line-track"></div>
+          <div className="quiz-screen__slider-line-marker quiz-screen__slider-line-marker--left"></div>
+          <div className="quiz-screen__slider-line-marker quiz-screen__slider-line-marker--right"></div>
+        </div>
+        <div className="quiz-screen__number-answers">
+          <AnswerButton
+            variant="number"
+            selected={selected === '1'}
+            onClick={() => handleAnswer('1')}
+          >
+            1
+          </AnswerButton>
+          <AnswerButton
+            variant="number"
+            selected={selected === '2'}
+            onClick={() => handleAnswer('2')}
+          >
+            2
+          </AnswerButton>
+          <AnswerButton
+            variant="number"
+            selected={selected === '3'}
+            onClick={() => handleAnswer('3')}
+          >
+            3
+          </AnswerButton>
+          <AnswerButton
+            variant="number"
+            selected={selected === '4'}
+            onClick={() => handleAnswer('4')}
+          >
+            4
+          </AnswerButton>
         </div>
         <BackButton to="/quiz5" />
       </div>

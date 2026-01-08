@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ScreenLayout } from '../components/ScreenLayout'
 import { ProgressBar } from '../components/ProgressBar'
-import { AnswerButton } from '../components/AnswerButton'
 import { BackButton } from '../components/BackButton'
 import { track, formatAnswerText } from '../lib/analytics'
 import { useFunnelStore } from '../store/funnelStore'
@@ -41,36 +40,76 @@ export const Quiz5Screen: React.FC = () => {
 
   return (
     <ScreenLayout>
-      <div className="quiz-screen quiz-screen--quiz5">
-        <ProgressBar progress={5 / 10} />
+      <div className="quiz-screen quiz-screen--quiz6">
+        <ProgressBar progress={5 / 9} />
         <h2 className="quiz-screen__question">
-          Which <span className="quiz-screen__highlight">problems</span> occur most often?
+          What <span className="quiz-screen__highlight--orange">body type</span> do you like best?
         </h2>
-        <div className="quiz-screen__answers">
-          <AnswerButton
-            selected={selected === "⁉️ Don't know what to do"}
-            onClick={() => handleAnswer("⁉️ Don't know what to do")}
-          >
-            ⁉️ Don't know what to do
-          </AnswerButton>
-          <AnswerButton
-            selected={selected === "👀 Feel shy"}
-            onClick={() => handleAnswer("👀 Feel shy")}
-          >
-            👀 Feel shy
-          </AnswerButton>
-          <AnswerButton
-            selected={selected === "🧠 Afraid to make a mistake"}
-            onClick={() => handleAnswer("🧠 Afraid to make a mistake")}
-          >
-            🧠 Afraid to make a mistake
-          </AnswerButton>
-          <AnswerButton
-            selected={selected === "🚫 None of these"}
-            onClick={() => handleAnswer("🚫 None of these")}
-          >
-            🚫 None of these
-          </AnswerButton>
+        <div className="quiz-screen__image-answers quiz-screen__image-answers--quiz9">
+          <div className="quiz-screen__image-row">
+            <button
+              className={`quiz-screen__image-answer ${selected === 'Option 1' ? 'quiz-screen__image-answer--selected' : ''}`}
+              onClick={() => handleAnswer('Option 1')}
+            >
+              <img 
+                src="/quiz9-option1.jpeg" 
+                alt="Partner option 1"
+                className="quiz-screen__image"
+                onError={(e) => {
+                  // Fallback if image doesn't exist
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                }}
+              />
+            </button>
+            <button
+              className={`quiz-screen__image-answer ${selected === 'Option 2' ? 'quiz-screen__image-answer--selected' : ''}`}
+              onClick={() => handleAnswer('Option 2')}
+            >
+              <img 
+                src="/quiz9-option2.jpg" 
+                alt="Partner option 2"
+                className="quiz-screen__image"
+                onError={(e) => {
+                  // Fallback if image doesn't exist
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                }}
+              />
+            </button>
+          </div>
+          <div className="quiz-screen__image-row">
+            <button
+              className={`quiz-screen__image-answer ${selected === 'Option 3' ? 'quiz-screen__image-answer--selected' : ''}`}
+              onClick={() => handleAnswer('Option 3')}
+            >
+              <img 
+                src="/quiz9-option3.jpg" 
+                alt="Partner option 3"
+                className="quiz-screen__image"
+                onError={(e) => {
+                  // Fallback if image doesn't exist
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                }}
+              />
+            </button>
+            <button
+              className={`quiz-screen__image-answer ${selected === 'Option 4' ? 'quiz-screen__image-answer--selected' : ''}`}
+              onClick={() => handleAnswer('Option 4')}
+            >
+              <img 
+                src="/quiz9-option4.jpg" 
+                alt="Partner option 4"
+                className="quiz-screen__image"
+                onError={(e) => {
+                  // Fallback if image doesn't exist
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                }}
+              />
+            </button>
+          </div>
         </div>
         <BackButton to="/quiz4" />
       </div>

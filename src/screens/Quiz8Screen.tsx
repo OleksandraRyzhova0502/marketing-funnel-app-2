@@ -42,9 +42,9 @@ export const Quiz8Screen: React.FC = () => {
   return (
     <ScreenLayout>
       <div className="quiz-screen quiz-screen--quiz6">
-        <ProgressBar progress={8 / 10} />
+        <ProgressBar progress={8 / 9} />
         <h2 className="quiz-screen__question">
-          🌶 How do <span className="quiz-screen__highlight">you</span> feel about <span className="quiz-screen__highlight--pink">experiments?</span>
+          🔞 How do <span className="quiz-screen__highlight">you</span> feel about <span className="quiz-screen__highlight--pink">BDSM?</span>
         </h2>
         <div className="quiz-screen__slider-labels">
           <span>don't like</span>

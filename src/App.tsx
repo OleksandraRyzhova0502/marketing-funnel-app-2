@@ -11,7 +11,6 @@ import { Quiz6Screen } from './screens/Quiz6Screen'
 import { Quiz7Screen } from './screens/Quiz7Screen'
 import { Quiz8Screen } from './screens/Quiz8Screen'
 import { Quiz9Screen } from './screens/Quiz9Screen'
-import { Quiz10Screen } from './screens/Quiz10Screen'
 import { LoaderScreen } from './screens/LoaderScreen'
 import { PlanScreen } from './screens/PlanScreen'
 import { MailScreen } from './screens/MailScreen'
@@ -45,7 +44,6 @@ function App() {
         <Route path="/quiz7" element={<Quiz7Screen />} />
         <Route path="/quiz8" element={<Quiz8Screen />} />
         <Route path="/quiz9" element={<Quiz9Screen />} />
-        <Route path="/quiz10" element={<Quiz10Screen />} />
         <Route path="/loader" element={<LoaderScreen />} />
         <Route path="/plan" element={<PlanScreen />} />
         <Route path="/mail" element={<MailScreen />} />

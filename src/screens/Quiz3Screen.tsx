@@ -41,35 +41,29 @@ export const Quiz3Screen: React.FC = () => {
 
   return (
     <ScreenLayout>
-      <div className="quiz-screen quiz-screen--quiz3">
-        <ProgressBar progress={3 / 10} />
+      <div className="quiz-screen quiz-screen--quiz4">
+        <ProgressBar progress={3 / 9} />
         <h2 className="quiz-screen__question">
-          Which of these would you like <span className="quiz-screen__highlight">to learn about</span> the most?
+          Do you currently have<br /><span className="quiz-screen__highlight">a partner?</span>
         </h2>
         <div className="quiz-screen__answers">
           <AnswerButton
-            selected={selected === "🐈‍⬛ Sex positions"}
-            onClick={() => handleAnswer("🐈‍⬛ Sex positions")}
+            selected={selected === '🥃 No partner'}
+            onClick={() => handleAnswer('🥃 No partner')}
           >
-            🐈‍⬛ Sex positions
+            🥃 No partner
           </AnswerButton>
           <AnswerButton
-            selected={selected === "🖐 Intimate massage"}
-            onClick={() => handleAnswer("🖐 Intimate massage")}
+            selected={selected === '💃 In a relationship'}
+            onClick={() => handleAnswer('💃 In a relationship')}
           >
-            🖐 Intimate massage
+            💃 In a relationship
           </AnswerButton>
           <AnswerButton
-            selected={selected === "🫦 Oral sex"}
-            onClick={() => handleAnswer("🫦 Oral sex")}
+            selected={selected === '👯‍♀️ Have multiple partners'}
+            onClick={() => handleAnswer('👯‍♀️ Have multiple partners')}
           >
-            🫦 Oral sex
-          </AnswerButton>
-          <AnswerButton
-            selected={selected === "🔞 All of this"}
-            onClick={() => handleAnswer("🔞 All of this")}
-          >
-            🔞 All of this
+            👯‍♀️ Have multiple partners
           </AnswerButton>
         </div>
         <BackButton to="/quiz2" />

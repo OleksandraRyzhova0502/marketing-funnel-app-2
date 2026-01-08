@@ -41,7 +41,7 @@ export const Quiz1Screen: React.FC = () => {
   return (
     <ScreenLayout>
       <div className="quiz-screen quiz-screen--quiz1">
-        <ProgressBar progress={1 / 10} />
+        <ProgressBar progress={1 / 9} />
         <h2 className="quiz-screen__question">
           How do you rate your<br />
           current <span className="quiz-screen__highlight">sex skills</span> level?
