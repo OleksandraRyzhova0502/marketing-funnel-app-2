@@ -1,71 +1,45 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ScreenLayout } from '../components/ScreenLayout'
-import { ProgressBar } from '../components/ProgressBar'
-import { AnswerButton } from '../components/AnswerButton'
-import { track, formatAnswerText } from '../lib/analytics'
-import { useFunnelStore } from '../store/funnelStore'
-import './QuizScreen.css'
+import { PrimaryButton } from '../components/PrimaryButton'
+import { track } from '../lib/analytics'
+import './Quiz1Screen.css'
 
 export const Quiz1Screen: React.FC = () => {
   const navigate = useNavigate()
   const hasTrackedView = useRef(false)
-  const [selected, setSelected] = useState<string | null>(null)
-  const setAnswer = useFunnelStore((state) => state.setAnswer)
-  const answers = useFunnelStore((state) => state.answers)
 
   useEffect(() => {
     if (!hasTrackedView.current) {
-      track('view_question_1')
+      track('view_landing')
       hasTrackedView.current = true
     }
-    
-    // Load saved answer if exists (only on mount)
-    const savedAnswer = answers['question_1']
-    if (savedAnswer) {
-      // Convert formatted answer back to original (replace underscores with spaces)
-      const originalAnswer = savedAnswer.replace(/_/g, ' ')
-      setSelected(originalAnswer)
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const handleAnswer = (answer: string) => {
-    setSelected(answer)
-    const formatted = formatAnswerText(answer)
-    setAnswer('question_1', formatted)
-    track('answear_question_1', { answer: formatted })
-    setTimeout(() => navigate('/quiz2'), 300)
+  const handleStartQuiz = () => {
+    track('clicked_start_quiz')
+    navigate('/quiz2')
   }
 
   return (
-    <ScreenLayout>
-      <div className="quiz-screen quiz-screen--quiz1">
-        <ProgressBar progress={1 / 9} />
-        <h2 className="quiz-screen__question">
-          How do you rate your<br />
-          current <span className="quiz-screen__highlight">sex skills</span> level?
-        </h2>
-        <div className="quiz-screen__answers">
-          <AnswerButton
-            selected={selected === '🥦 Newbie'}
-            onClick={() => handleAnswer('🥦 Newbie')}
-          >
-            🥦 Newbie
-          </AnswerButton>
-          <AnswerButton
-            selected={selected === '🍌 Tried something before'}
-            onClick={() => handleAnswer('🍌 Tried something before')}
-          >
-            🍌 Tried something before
-          </AnswerButton>
-          <AnswerButton
-            selected={selected === '🍆 Had some prior experience'}
-            onClick={() => handleAnswer('🍆 Had some prior experience')}
-          >
-            🍆 Had some prior experience
-          </AnswerButton>
+    <ScreenLayout variant="landing">
+      <div className="landing-screen">
+        <h1 className="landing-screen__title">
+          Improve your <span className="landing-screen__highlight">sexual skills</span>
+        </h1>
+        <div className="landing-screen__tags">
+          <div className="landing-screen__tag">poses</div>
+          <div className="landing-screen__tag">intimate massage</div>
+          <div className="landing-screen__tag">NLP methods</div>
+          <div className="landing-screen__tag">oral sex</div>
+          <div className="landing-screen__tag">seduction techniques</div>
         </div>
+        <PrimaryButton onClick={handleStartQuiz}>
+          START
+        </PrimaryButton>
+        <p className="landing-screen__disclaimer">
+          For best experience, we personalize the course to suit your preferences
+        </p>
       </div>
     </ScreenLayout>
   )

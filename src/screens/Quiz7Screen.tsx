@@ -41,7 +41,7 @@ export const Quiz7Screen: React.FC = () => {
 
   return (
     <ScreenLayout>
-      <div className="quiz-screen quiz-screen--quiz6">
+      <div className="quiz-screen quiz-screen--quiz7">
         <ProgressBar progress={7 / 9} />
         <h2 className="quiz-screen__question">
           🌶 How do <span className="quiz-screen__highlight">you</span> feel about <span className="quiz-screen__highlight--pink">experiments?</span>

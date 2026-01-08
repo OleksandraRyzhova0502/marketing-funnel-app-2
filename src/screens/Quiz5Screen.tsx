@@ -40,7 +40,7 @@ export const Quiz5Screen: React.FC = () => {
 
   return (
     <ScreenLayout>
-      <div className="quiz-screen quiz-screen--quiz6">
+      <div className="quiz-screen quiz-screen--quiz5">
         <ProgressBar progress={5 / 9} />
         <h2 className="quiz-screen__question">
           What <span className="quiz-screen__highlight--orange">body type</span> do you like best?

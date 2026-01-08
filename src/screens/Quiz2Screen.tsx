@@ -41,35 +41,30 @@ export const Quiz2Screen: React.FC = () => {
 
   return (
     <ScreenLayout>
-      <div className="quiz-screen quiz-screen--quiz3">
+      <div className="quiz-screen quiz-screen--quiz1">
         <ProgressBar progress={2 / 9} />
         <h2 className="quiz-screen__question">
-          Which of these would you like <span className="quiz-screen__highlight">to learn about</span> the most?
+          How do you rate your<br />
+          current <span className="quiz-screen__highlight">sex skills</span> level?
         </h2>
         <div className="quiz-screen__answers">
           <AnswerButton
-            selected={selected === "🐈‍⬛ Sex positions"}
-            onClick={() => handleAnswer("🐈‍⬛ Sex positions")}
+            selected={selected === '🥦 Newbie'}
+            onClick={() => handleAnswer('🥦 Newbie')}
           >
-            🐈‍⬛ Sex positions
+            🥦 Newbie
           </AnswerButton>
           <AnswerButton
-            selected={selected === "🖐 Intimate massage"}
-            onClick={() => handleAnswer("🖐 Intimate massage")}
+            selected={selected === '🍌 Tried something before'}
+            onClick={() => handleAnswer('🍌 Tried something before')}
           >
-            🖐 Intimate massage
+            🍌 Tried something before
           </AnswerButton>
           <AnswerButton
-            selected={selected === "🫦 Oral sex"}
-            onClick={() => handleAnswer("🫦 Oral sex")}
+            selected={selected === '🍆 Had some prior experience'}
+            onClick={() => handleAnswer('🍆 Had some prior experience')}
           >
-            🫦 Oral sex
-          </AnswerButton>
-          <AnswerButton
-            selected={selected === "🔞 All of this"}
-            onClick={() => handleAnswer("🔞 All of this")}
-          >
-            🔞 All of this
+            🍆 Had some prior experience
           </AnswerButton>
         </div>
         <BackButton to="/quiz1" />

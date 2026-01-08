@@ -41,7 +41,7 @@ export const Quiz9Screen: React.FC = () => {
 
   return (
     <ScreenLayout>
-      <div className="quiz-screen quiz-screen--quiz7">
+      <div className="quiz-screen quiz-screen--quiz9">
         <ProgressBar progress={9 / 9} />
         <h2 className="quiz-screen__question">
           🫦 How comfortable are you with <span className="quiz-screen__highlight">oral sex?</span>

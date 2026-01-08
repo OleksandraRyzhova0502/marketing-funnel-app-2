@@ -5,15 +5,17 @@ interface ScreenLayoutProps {
   children: React.ReactNode
   showCloseButton?: boolean
   onClose?: () => void
+  variant?: 'default' | 'landing'
 }
 
 export const ScreenLayout: React.FC<ScreenLayoutProps> = ({
   children,
   showCloseButton = false,
   onClose,
+  variant = 'default',
 }) => {
   return (
-    <div className="screen-layout">
+    <div className={`screen-layout ${variant === 'landing' ? 'screen-layout--landing' : ''}`}>
       <div className="screen-layout__background" />
       <div className="screen-layout__container">
         {showCloseButton && onClose && (

@@ -41,7 +41,7 @@ export const Quiz4Screen: React.FC = () => {
 
   return (
     <ScreenLayout>
-      <div className="quiz-screen quiz-screen--quiz5">
+      <div className="quiz-screen quiz-screen--quiz4">
         <ProgressBar progress={4 / 9} />
         <h2 className="quiz-screen__question">
           Which <span className="quiz-screen__highlight">problems</span> occur most often?
