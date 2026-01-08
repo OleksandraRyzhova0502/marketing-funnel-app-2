@@ -10,10 +10,10 @@
   justify-content: space-between;
 }
 
-.plan-screen > :last-child {
-  margin-top: auto;
-  margin-bottom: 10vh;
-  align-self: center;
+.plan-screen__button-container {
+  position: absolute;
+  bottom: 14vh;
+  left: 20px;
 }
 
 .plan-screen__title {

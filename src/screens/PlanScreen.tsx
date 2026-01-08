@@ -49,7 +49,9 @@ export const PlanScreen: React.FC = () => {
             And many other useful recommendations from our <span className="plan-screen__highlight">professionals</span> and <span className="plan-screen__highlight">experts</span>;
           </li>
         </ul>
-        <PrimaryButton onClick={handleNext}>NEXT &gt;&gt;</PrimaryButton>
+        <div className="plan-screen__button-container">
+          <PrimaryButton onClick={handleNext}>NEXT &gt;&gt;</PrimaryButton>
+        </div>
       </div>
     </ScreenLayout>
   )

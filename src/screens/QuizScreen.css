@@ -222,3 +222,17 @@
   background: rgba(159, 79, 22, 0.8);
 }
 
+.quiz-screen--quiz8 .quiz-screen__slider-labels,
+.quiz-screen--quiz9 .quiz-screen__slider-labels {
+  color: #ff6a00;
+}
+
+.quiz-screen--quiz8 .quiz-screen__slider-line-track,
+.quiz-screen--quiz9 .quiz-screen__slider-line-track {
+  background: rgba(255, 106, 0, 0.6);
+}
+
+.quiz-screen--quiz8 .quiz-screen__slider-line-marker,
+.quiz-screen--quiz9 .quiz-screen__slider-line-marker {
+  background: rgba(255, 106, 0, 0.8);
+}
