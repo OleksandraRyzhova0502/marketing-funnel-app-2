@@ -35,36 +35,37 @@ export const Quiz1Screen: React.FC = () => {
     const formatted = formatAnswerText(answer)
     setAnswer('question_1', formatted)
     track('answear_question_1', { answer: formatted })
-    if (answer === 'Sexual skills') {
-      setTimeout(() => navigate('/skillsfact'), 300)
-    } else if (answer === 'Dating and communication with women') {
-      setTimeout(() => navigate('/talkfact'), 300)
-    }
+    setTimeout(() => navigate('/quiz2'), 300)
   }
 
   return (
     <ScreenLayout>
       <div className="quiz-screen">
-        <ProgressBar progress={1 / 8} />
+        <ProgressBar progress={1 / 7} />
         <h2 className="quiz-screen__question">
-          Which <span className="quiz-screen__highlight">skills</span> would you like to improve?
+          What is your <span className="quiz-screen__highlight">main goal?</span>
         </h2>
         <div className="quiz-screen__answers">
           <AnswerButton
-            selected={selected === 'Sexual skills'}
-            onClick={() => handleAnswer('Sexual skills')}
+            selected={selected === 'Improve skills'}
+            onClick={() => handleAnswer('Improve skills')}
           >
-            Sexual skills
+            Improve skills
           </AnswerButton>
           <AnswerButton
-            selected={selected === 'Dating and communication with women'}
-            onClick={() => handleAnswer('Dating and communication with women')}
+            selected={selected === 'Boost confidence'}
+            onClick={() => handleAnswer('Boost confidence')}
           >
-            Dating and communication with women
+            Boost confidence
+          </AnswerButton>
+          <AnswerButton
+            selected={selected === 'Expand knowledge'}
+            onClick={() => handleAnswer('Expand knowledge')}
+          >
+            Expand knowledge
           </AnswerButton>
         </div>
       </div>
     </ScreenLayout>
   )
 }
-

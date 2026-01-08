@@ -4,14 +4,11 @@ import { initAnalytics } from './lib/analytics'
 import { useUTMStore } from './store/utmStore'
 import { Quiz1Screen } from './screens/Quiz1Screen'
 import { Quiz2Screen } from './screens/Quiz2Screen'
-import { SkillsFactScreen } from './screens/SkillsFactScreen'
-import { TalkFactScreen } from './screens/TalkFactScreen'
 import { Quiz3Screen } from './screens/Quiz3Screen'
 import { Quiz4Screen } from './screens/Quiz4Screen'
 import { Quiz5Screen } from './screens/Quiz5Screen'
 import { Quiz6Screen } from './screens/Quiz6Screen'
 import { Quiz7Screen } from './screens/Quiz7Screen'
-import { Quiz8Screen } from './screens/Quiz8Screen'
 import { LoaderScreen } from './screens/LoaderScreen'
 import { PlanScreen } from './screens/PlanScreen'
 import { MailScreen } from './screens/MailScreen'
@@ -37,15 +34,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/quiz1" replace />} />
         <Route path="/quiz1" element={<Quiz1Screen />} />
-        <Route path="/skillsfact" element={<SkillsFactScreen />} />
-        <Route path="/talkfact" element={<TalkFactScreen />} />
         <Route path="/quiz2" element={<Quiz2Screen />} />
         <Route path="/quiz3" element={<Quiz3Screen />} />
         <Route path="/quiz4" element={<Quiz4Screen />} />
         <Route path="/quiz5" element={<Quiz5Screen />} />
         <Route path="/quiz6" element={<Quiz6Screen />} />
         <Route path="/quiz7" element={<Quiz7Screen />} />
-        <Route path="/quiz8" element={<Quiz8Screen />} />
         <Route path="/loader" element={<LoaderScreen />} />
         <Route path="/plan" element={<PlanScreen />} />
         <Route path="/mail" element={<MailScreen />} />

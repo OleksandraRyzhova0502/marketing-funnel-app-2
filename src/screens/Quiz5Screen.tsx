@@ -41,31 +41,57 @@ export const Quiz5Screen: React.FC = () => {
 
   return (
     <ScreenLayout>
-      <div className="quiz-screen">
-        <ProgressBar progress={5 / 8} />
+      <div className="quiz-screen quiz-screen--quiz5">
+        <ProgressBar progress={5 / 7} />
         <h2 className="quiz-screen__question">
-          Do you currently have<br /><span className="quiz-screen__highlight">a partner?</span>
+          What is your <span className="quiz-screen__highlight">libido level?</span>
         </h2>
-        <div className="quiz-screen__answers">
+        <div className="quiz-screen__slider-labels">
+          <span>low</span>
+          <span>high</span>
+        </div>
+        <div className="quiz-screen__slider-line quiz-screen__slider-line--quiz5">
+          <div className="quiz-screen__slider-line-track"></div>
+          <div className="quiz-screen__slider-line-marker quiz-screen__slider-line-marker--left"></div>
+          <div className="quiz-screen__slider-line-marker quiz-screen__slider-line-marker--right"></div>
+        </div>
+        <div className="quiz-screen__number-answers">
           <AnswerButton
-            selected={selected === 'No partner'}
-            onClick={() => handleAnswer('No partner')}
+            variant="number"
+            selected={selected === '1'}
+            onClick={() => handleAnswer('1')}
           >
-            No partner
+            1
           </AnswerButton>
           <AnswerButton
-            selected={selected === 'In a relationship'}
-            onClick={() => handleAnswer('In a relationship')}
+            variant="number"
+            selected={selected === '2'}
+            onClick={() => handleAnswer('2')}
           >
-            In a relationship
+            2
           </AnswerButton>
           <AnswerButton
-            selected={selected === 'Have multiple partners'}
-            onClick={() => handleAnswer('Have multiple partners')}
+            variant="number"
+            selected={selected === '3'}
+            onClick={() => handleAnswer('3')}
           >
-            Have multiple partners
+            3
+          </AnswerButton>
+          <AnswerButton
+            variant="number"
+            selected={selected === '4'}
+            onClick={() => handleAnswer('4')}
+          >
+            4
           </AnswerButton>
         </div>
+        <AnswerButton
+          variant="number"
+          selected={selected === "I don't know"}
+          onClick={() => handleAnswer("I don't know")}
+        >
+          I don't know
+        </AnswerButton>
         <BackButton to="/quiz4" />
       </div>
     </ScreenLayout>

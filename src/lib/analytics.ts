@@ -15,6 +15,11 @@ declare global {
     sessionReplay: {
       plugin: (options: { sampleRate: number }) => any
     }
+    fbq: (
+      action: 'init' | 'track' | 'trackSingle' | 'trackCustom',
+      eventName: string,
+      eventData?: Record<string, any>
+    ) => void
   }
 }
 
@@ -218,3 +223,22 @@ export function formatAnswerText(text: string): string {
   return text.replace(/\s+/g, '_')
 }
 
+/**
+ * Track Facebook Pixel event
+ * 
+ * @param eventName - Name of the Facebook Pixel event (e.g., 'CompleteRegistration', 'Lead', 'Purchase')
+ * @param eventData - Optional event data to send with the event
+ */
+export function trackFacebookPixel(eventName: string, eventData?: Record<string, any>) {
+  if (typeof window === 'undefined' || !window.fbq) {
+    // If Facebook Pixel isn't loaded yet, queue the event
+    setTimeout(() => trackFacebookPixel(eventName, eventData), 100)
+    return
+  }
+
+  try {
+    window.fbq('track', eventName, eventData || {})
+  } catch (error) {
+    console.error('Failed to track Facebook Pixel event:', error)
+  }
+}

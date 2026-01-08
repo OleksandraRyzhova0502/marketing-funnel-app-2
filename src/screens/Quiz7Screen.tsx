@@ -36,26 +36,26 @@ export const Quiz7Screen: React.FC = () => {
     const formatted = formatAnswerText(answer)
     setAnswer('question_7', formatted)
     track('answear_question_7', { answer: formatted })
-    setTimeout(() => navigate('/quiz8'), 300)
+    setTimeout(() => navigate('/loader'), 300)
   }
 
   return (
     <ScreenLayout>
-      <div className="quiz-screen quiz-screen--quiz6">
-        <ProgressBar progress={7 / 8} />
+      <div className="quiz-screen quiz-screen--quiz7">
+        <ProgressBar progress={7 / 7} />
         <h2 className="quiz-screen__question">
-          How do <span className="quiz-screen__highlight">you</span> feel about <span className="quiz-screen__highlight--pink">experiments?</span>
+          How comfortable are you with <span className="quiz-screen__highlight">oral sex?</span>
         </h2>
         <div className="quiz-screen__slider-labels">
-          <span>don't like</span>
-          <span>is always ready to</span>
+          <span>I don't<br />like it</span>
+          <span> <br />enjoying it</span>
         </div>
         <div className="quiz-screen__slider-line">
           <div className="quiz-screen__slider-line-track"></div>
           <div className="quiz-screen__slider-line-marker quiz-screen__slider-line-marker--left"></div>
           <div className="quiz-screen__slider-line-marker quiz-screen__slider-line-marker--right"></div>
         </div>
-        <div className="quiz-screen__number-answers quiz-screen__number-answers--quiz6">
+        <div className="quiz-screen__number-answers quiz-screen__number-answers--quiz7">
           <AnswerButton
             variant="number"
             selected={selected === '1'}

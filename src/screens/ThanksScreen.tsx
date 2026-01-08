@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { ScreenLayout } from '../components/ScreenLayout'
-import { track } from '../lib/analytics'
+import { track, trackFacebookPixel } from '../lib/analytics'
 import './ThanksScreen.css'
 
 export const ThanksScreen: React.FC = () => {
@@ -9,6 +9,8 @@ export const ThanksScreen: React.FC = () => {
   useEffect(() => {
     if (!hasTrackedView.current) {
       track('view_thanks_page')
+      // Track Facebook Pixel event for registration completion
+      trackFacebookPixel('CompleteRegistration')
       hasTrackedView.current = true
     }
   }, [])

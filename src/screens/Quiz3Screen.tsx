@@ -42,28 +42,34 @@ export const Quiz3Screen: React.FC = () => {
   return (
     <ScreenLayout>
       <div className="quiz-screen">
-        <ProgressBar progress={3 / 8} />
+        <ProgressBar progress={3 / 7} />
         <h2 className="quiz-screen__question">
-          What is your <span className="quiz-screen__highlight">main goal?</span>
+          Which <span className="quiz-screen__highlight">problems</span> occur most often?
         </h2>
         <div className="quiz-screen__answers">
           <AnswerButton
-            selected={selected === 'Improve skills'}
-            onClick={() => handleAnswer('Improve skills')}
+            selected={selected === "Don't know what to do"}
+            onClick={() => handleAnswer("Don't know what to do")}
           >
-            Improve skills
+            Don't know what to do
           </AnswerButton>
           <AnswerButton
-            selected={selected === 'Boost confidence'}
-            onClick={() => handleAnswer('Boost confidence')}
+            selected={selected === "Feel shy"}
+            onClick={() => handleAnswer("Feel shy")}
           >
-            Boost confidence
+            Feel shy
           </AnswerButton>
           <AnswerButton
-            selected={selected === 'Expand knowledge'}
-            onClick={() => handleAnswer('Expand knowledge')}
+            selected={selected === "Afraid to make a mistake"}
+            onClick={() => handleAnswer("Afraid to make a mistake")}
           >
-            Expand knowledge
+            Afraid to make a mistake
+          </AnswerButton>
+          <AnswerButton
+            selected={selected === "None of these"}
+            onClick={() => handleAnswer("None of these")}
+          >
+            None of these
           </AnswerButton>
         </div>
         <BackButton to="/quiz2" />
