@@ -8,7 +8,7 @@ import { track, formatAnswerText } from '../lib/analytics'
 import { useFunnelStore } from '../store/funnelStore'
 import './QuizScreen.css'
 
-export const Quiz7Screen: React.FC = () => {
+export const Quiz8Screen: React.FC = () => {
   const navigate = useNavigate()
   const hasTrackedView = useRef(false)
   const [selected, setSelected] = useState<string | null>(null)
@@ -17,12 +17,12 @@ export const Quiz7Screen: React.FC = () => {
 
   useEffect(() => {
     if (!hasTrackedView.current) {
-      track('view_question_7')
+      track('view_question_8')
       hasTrackedView.current = true
     }
     
     // Load saved answer if exists (only on mount)
-    const savedAnswer = answers['question_7']
+    const savedAnswer = answers['question_8']
     if (savedAnswer) {
       // Convert formatted answer back to original (replace underscores with spaces)
       const originalAnswer = savedAnswer.replace(/_/g, ' ')
@@ -34,28 +34,28 @@ export const Quiz7Screen: React.FC = () => {
   const handleAnswer = (answer: string) => {
     setSelected(answer)
     const formatted = formatAnswerText(answer)
-    setAnswer('question_7', formatted)
-    track('answear_question_7', { answer: formatted })
-    setTimeout(() => navigate('/quiz8'), 300)
+    setAnswer('question_8', formatted)
+    track('answear_question_8', { answer: formatted })
+    setTimeout(() => navigate('/quiz9'), 300)
   }
 
   return (
     <ScreenLayout>
-      <div className="quiz-screen quiz-screen--quiz6">
-        <ProgressBar progress={7 / 10} />
+      <div className="quiz-screen quiz-screen--quiz7">
+        <ProgressBar progress={8 / 10} />
         <h2 className="quiz-screen__question">
-          How do <span className="quiz-screen__highlight">you</span> feel about <span className="quiz-screen__highlight--pink">BDSM?</span>
+          How comfortable are you with <span className="quiz-screen__highlight">oral sex?</span>
         </h2>
         <div className="quiz-screen__slider-labels">
-          <span>don't like</span>
-          <span>is always ready to</span>
+          <span>I don't<br />like it</span>
+          <span> <br />enjoying it</span>
         </div>
         <div className="quiz-screen__slider-line">
           <div className="quiz-screen__slider-line-track"></div>
           <div className="quiz-screen__slider-line-marker quiz-screen__slider-line-marker--left"></div>
           <div className="quiz-screen__slider-line-marker quiz-screen__slider-line-marker--right"></div>
         </div>
-        <div className="quiz-screen__number-answers quiz-screen__number-answers--quiz6">
+        <div className="quiz-screen__number-answers quiz-screen__number-answers--quiz7">
           <AnswerButton
             variant="number"
             selected={selected === '1'}
@@ -85,7 +85,7 @@ export const Quiz7Screen: React.FC = () => {
             4
           </AnswerButton>
         </div>
-        <BackButton to="/quiz6" />
+        <BackButton to="/quiz7" />
       </div>
     </ScreenLayout>
   )

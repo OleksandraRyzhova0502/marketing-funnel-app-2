@@ -8,7 +8,7 @@ import { track, formatAnswerText } from '../lib/analytics'
 import { useFunnelStore } from '../store/funnelStore'
 import './QuizScreen.css'
 
-export const Quiz7Screen: React.FC = () => {
+export const Quiz10Screen: React.FC = () => {
   const navigate = useNavigate()
   const hasTrackedView = useRef(false)
   const [selected, setSelected] = useState<string | null>(null)
@@ -17,12 +17,12 @@ export const Quiz7Screen: React.FC = () => {
 
   useEffect(() => {
     if (!hasTrackedView.current) {
-      track('view_question_7')
+      track('view_question_10')
       hasTrackedView.current = true
     }
     
     // Load saved answer if exists (only on mount)
-    const savedAnswer = answers['question_7']
+    const savedAnswer = answers['question_10']
     if (savedAnswer) {
       // Convert formatted answer back to original (replace underscores with spaces)
       const originalAnswer = savedAnswer.replace(/_/g, ' ')
@@ -34,58 +34,45 @@ export const Quiz7Screen: React.FC = () => {
   const handleAnswer = (answer: string) => {
     setSelected(answer)
     const formatted = formatAnswerText(answer)
-    setAnswer('question_7', formatted)
-    track('answear_question_7', { answer: formatted })
-    setTimeout(() => navigate('/quiz8'), 300)
+    setAnswer('question_10', formatted)
+    track('answear_question_10', { answer: formatted })
+    setTimeout(() => navigate('/loader'), 300)
   }
 
   return (
     <ScreenLayout>
-      <div className="quiz-screen quiz-screen--quiz6">
-        <ProgressBar progress={7 / 10} />
+      <div className="quiz-screen">
+        <ProgressBar progress={10 / 10} />
         <h2 className="quiz-screen__question">
-          How do <span className="quiz-screen__highlight">you</span> feel about <span className="quiz-screen__highlight--pink">BDSM?</span>
+          Which <span className="quiz-screen__highlight">problems</span> occur most often?
         </h2>
-        <div className="quiz-screen__slider-labels">
-          <span>don't like</span>
-          <span>is always ready to</span>
-        </div>
-        <div className="quiz-screen__slider-line">
-          <div className="quiz-screen__slider-line-track"></div>
-          <div className="quiz-screen__slider-line-marker quiz-screen__slider-line-marker--left"></div>
-          <div className="quiz-screen__slider-line-marker quiz-screen__slider-line-marker--right"></div>
-        </div>
-        <div className="quiz-screen__number-answers quiz-screen__number-answers--quiz6">
+        <div className="quiz-screen__answers">
           <AnswerButton
-            variant="number"
-            selected={selected === '1'}
-            onClick={() => handleAnswer('1')}
+            selected={selected === "Don't know what to do"}
+            onClick={() => handleAnswer("Don't know what to do")}
           >
-            1
+            Don't know what to do
           </AnswerButton>
           <AnswerButton
-            variant="number"
-            selected={selected === '2'}
-            onClick={() => handleAnswer('2')}
+            selected={selected === "Feel shy"}
+            onClick={() => handleAnswer("Feel shy")}
           >
-            2
+            Feel shy
           </AnswerButton>
           <AnswerButton
-            variant="number"
-            selected={selected === '3'}
-            onClick={() => handleAnswer('3')}
+            selected={selected === "Afraid to make a mistake"}
+            onClick={() => handleAnswer("Afraid to make a mistake")}
           >
-            3
+            Afraid to make a mistake
           </AnswerButton>
           <AnswerButton
-            variant="number"
-            selected={selected === '4'}
-            onClick={() => handleAnswer('4')}
+            selected={selected === "None of these"}
+            onClick={() => handleAnswer("None of these")}
           >
-            4
+            None of these
           </AnswerButton>
         </div>
-        <BackButton to="/quiz6" />
+        <BackButton to="/quiz9" />
       </div>
     </ScreenLayout>
   )

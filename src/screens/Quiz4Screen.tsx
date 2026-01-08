@@ -42,7 +42,7 @@ export const Quiz4Screen: React.FC = () => {
   return (
     <ScreenLayout>
       <div className="quiz-screen">
-        <ProgressBar progress={4 / 7} />
+        <ProgressBar progress={4 / 10} />
         <h2 className="quiz-screen__question">
           Do you currently have<br /><span className="quiz-screen__highlight">a partner?</span>
         </h2>

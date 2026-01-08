@@ -41,7 +41,7 @@ export const Quiz1Screen: React.FC = () => {
   return (
     <ScreenLayout>
       <div className="quiz-screen">
-        <ProgressBar progress={1 / 7} />
+        <ProgressBar progress={1 / 10} />
         <h2 className="quiz-screen__question">
           What is your <span className="quiz-screen__highlight">main goal?</span>
         </h2>

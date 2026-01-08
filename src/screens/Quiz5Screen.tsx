@@ -42,7 +42,7 @@ export const Quiz5Screen: React.FC = () => {
   return (
     <ScreenLayout>
       <div className="quiz-screen quiz-screen--quiz5">
-        <ProgressBar progress={5 / 7} />
+        <ProgressBar progress={5 / 10} />
         <h2 className="quiz-screen__question">
           What is your <span className="quiz-screen__highlight">libido level?</span>
         </h2>

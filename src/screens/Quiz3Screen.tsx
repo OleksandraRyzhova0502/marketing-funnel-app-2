@@ -42,7 +42,7 @@ export const Quiz3Screen: React.FC = () => {
   return (
     <ScreenLayout>
       <div className="quiz-screen">
-        <ProgressBar progress={3 / 7} />
+        <ProgressBar progress={3 / 10} />
         <h2 className="quiz-screen__question">
           Which <span className="quiz-screen__highlight">problems</span> occur most often?
         </h2>
