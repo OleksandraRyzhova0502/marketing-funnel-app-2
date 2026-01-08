@@ -44,7 +44,7 @@ export const Quiz5Screen: React.FC = () => {
       <div className="quiz-screen quiz-screen--quiz5">
         <ProgressBar progress={5 / 10} />
         <h2 className="quiz-screen__question">
-          What is your <span className="quiz-screen__highlight">libido level?</span>
+          🔥 What is your <span className="quiz-screen__highlight">libido level?</span>
         </h2>
         <div className="quiz-screen__slider-labels">
           <span>low</span>
@@ -85,13 +85,6 @@ export const Quiz5Screen: React.FC = () => {
             4
           </AnswerButton>
         </div>
-        <AnswerButton
-          variant="number"
-          selected={selected === "I don't know"}
-          onClick={() => handleAnswer("I don't know")}
-        >
-          I don't know
-        </AnswerButton>
         <BackButton to="/quiz4" />
       </div>
     </ScreenLayout>

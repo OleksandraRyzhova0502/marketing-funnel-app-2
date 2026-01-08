@@ -45,7 +45,7 @@ export const Quiz2Screen: React.FC = () => {
         <ProgressBar progress={2 / 10} />
         <h2 className="quiz-screen__question">
           How do you rate<br />
-          your <span className="quiz-screen__highlight">skill level</span> in this?
+          your <span className="quiz-screen__highlight">sex skills</span> level?
         </h2>
         <div className="quiz-screen__answers">
           <AnswerButton
