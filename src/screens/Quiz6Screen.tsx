@@ -52,7 +52,7 @@ export const Quiz6Screen: React.FC = () => {
               onClick={() => handleAnswer('Option 1')}
             >
               <img 
-                src="/quiz9-option1.jpg" 
+                src="/quiz9-option1.jpeg" 
                 alt="Partner option 1"
                 className="quiz-screen__image"
                 onError={(e) => {
@@ -67,7 +67,7 @@ export const Quiz6Screen: React.FC = () => {
               onClick={() => handleAnswer('Option 2')}
             >
               <img 
-                src="/quiz9-option4.jpg" 
+                src="/quiz9-option2.jpg" 
                 alt="Partner option 2"
                 className="quiz-screen__image"
                 onError={(e) => {
@@ -99,7 +99,7 @@ export const Quiz6Screen: React.FC = () => {
               onClick={() => handleAnswer('Option 4')}
             >
               <img 
-                src="/quiz9-option2.jpeg" 
+                src="/quiz9-option4.jpg" 
                 alt="Partner option 4"
                 className="quiz-screen__image"
                 onError={(e) => {
