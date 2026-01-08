@@ -41,7 +41,7 @@ export const Quiz2Screen: React.FC = () => {
 
   return (
     <ScreenLayout>
-      <div className="quiz-screen">
+      <div className="quiz-screen quiz-screen--quiz2">
         <ProgressBar progress={2 / 10} />
         <h2 className="quiz-screen__question">
           How do you rate<br />
@@ -49,22 +49,22 @@ export const Quiz2Screen: React.FC = () => {
         </h2>
         <div className="quiz-screen__answers">
           <AnswerButton
-            selected={selected === 'Newbie'}
-            onClick={() => handleAnswer('Newbie')}
+            selected={selected === '🥦 Newbie'}
+            onClick={() => handleAnswer('🥦 Newbie')}
           >
-            Newbie
+            🥦 Newbie
           </AnswerButton>
           <AnswerButton
-            selected={selected === 'Tried something before'}
-            onClick={() => handleAnswer('Tried something before')}
+            selected={selected === '🍌 Tried something before'}
+            onClick={() => handleAnswer('🍌 Tried something before')}
           >
-            Tried something before
+            🍌 Tried something before
           </AnswerButton>
           <AnswerButton
-            selected={selected === 'Had some prior experience'}
-            onClick={() => handleAnswer('Had some prior experience')}
+            selected={selected === '🍆 Had some prior experience'}
+            onClick={() => handleAnswer('🍆 Had some prior experience')}
           >
-            Had some prior experience
+            🍆 Had some prior experience
           </AnswerButton>
         </div>
         <BackButton to="/quiz1" />

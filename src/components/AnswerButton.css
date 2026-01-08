@@ -14,6 +14,15 @@
   text-align: center;
 }
 
+/* Quiz1-Quiz4: left-align button text and increase font size */
+.quiz-screen--quiz1 .answer-button,
+.quiz-screen--quiz2 .answer-button,
+.quiz-screen--quiz3 .answer-button,
+.quiz-screen--quiz4 .answer-button {
+  text-align: left;
+  font-size: 19px;
+}
+
 .answer-button--number {
   max-width: 62px;
   width: 62px;

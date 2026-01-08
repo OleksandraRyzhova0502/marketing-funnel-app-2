@@ -234,9 +234,7 @@ export function trackFacebookPixel(eventName: string, eventData?: Record<string,
     // If Facebook Pixel isn't loaded yet, queue the event
     setTimeout(() => trackFacebookPixel(eventName, eventData), 100)
     return
-  }
-
-  try {
+  }  try {
     window.fbq('track', eventName, eventData || {})
   } catch (error) {
     console.error('Failed to track Facebook Pixel event:', error)

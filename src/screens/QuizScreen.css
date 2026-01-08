@@ -31,6 +31,14 @@
   align-items: center;
 }
 
+/* Quiz1-Quiz4: left-align answers */
+.quiz-screen--quiz1 .quiz-screen__answers,
+.quiz-screen--quiz2 .quiz-screen__answers,
+.quiz-screen--quiz3 .quiz-screen__answers,
+.quiz-screen--quiz4 .quiz-screen__answers {
+  align-items: flex-start;
+}
+
 .quiz-screen__slider-labels {
   width: 100%;
   display: flex;
